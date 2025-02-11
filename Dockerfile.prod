@@ -1,0 +1,32 @@
+# Steg 1: Bygg React-appen
+FROM node:20.8.0-bullseye-slim AS builder
+
+# Arbetshantering i en container
+WORKDIR /usr/src/app
+
+# Kopiera package.json och package-lock.json för att installera beroenden
+COPY package*.json ./
+
+# Installera beroenden
+RUN npm install --production
+
+# Kopiera resten av appens filer
+COPY . .
+
+# Bygg React-appen
+RUN npm run build
+
+# Steg 2: Använd Nginx för att servera de statiska filerna
+FROM nginx:1.21.0-alpine AS production
+
+# Kopiera byggmappen från builder-steget
+COPY --from=builder /usr/src/app/build /usr/share/nginx/html
+
+# Kopiera en anpassad Nginx-konfiguration (om nödvändigt)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Exponera port 80 för Nginx
+EXPOSE 80
+
+# Starta Nginx
+CMD ["nginx", "-g", "daemon off;"]
