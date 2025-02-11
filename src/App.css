@@ -1,0 +1,79 @@
+/* General App styles */
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1; /* Take up remaining space */
+  transition: margin-left 0.3s ease-in-out; /* Smooth transition when the sidebar is toggled */
+  padding: 20px; /* Add padding to make space for the sidebar */
+}
+
+.main-content.with-sidebar {
+  margin-left: 250px; /* Adjust this if the sidebar has a different width */
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  z-index: 10; /* Ensure sidebar is above other content */
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%);
+  width: 50px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sidebar-toggle-button {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 1000;
+}
+
+.sidebar-toggle-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.collapsed {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle-button {
+    display: block;
+  }
+
+  .main-content {
+    margin-left: 0; /* Ensure content fills the screen */
+  }
+
+  .main-content.with-sidebar {
+    margin-left: 0; /* Avoid overlap when sidebar is toggled */
+  }
+}

@@ -1,0 +1,32 @@
+.edit-button, .save-button, .cancel-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px; /* Gör ikonerna mer framträdande */
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.edit-button:hover, .save-button:hover, .cancel-button:hover {
+    color: #d6d6d6; /* Hover-färg */
+}
+
+.save-button {
+    color: #28a745;
+}
+
+.save-button:hover {
+    color: #218838;
+}
+
+.cancel-button {
+    color: #dc3545;
+}
+
+.cancel-button:hover {
+    color: #c82333;
+}

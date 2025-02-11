@@ -1,0 +1,170 @@
+/* ProfilePage.css */
+
+/* Overall Page Layout */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  min-width: none;
+}
+
+/* Profile Section - Left Column */
+.profile-photo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+  margin-right: 20px;
+}
+
+.profile-info {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profile-info h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.profile-info p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.profile-followers-text {
+  color: #010101;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile-followers-text:hover {
+  color: #0095f6;
+}
+
+/* Followers Section - Right Column */
+.followers-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.followers-section p {
+  font-size: 1.1rem;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.followers-section p:hover {
+  color: #0095f6;
+}
+
+.showfollowers-button {
+  background-color: #0095f6;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  align-self: flex-end; /* Aligns button to the right */
+}
+
+.showfollowers-button:hover {
+  background-color: #007bb5;
+}
+
+/* Litters Section */
+.profile-content {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-content h2 {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.home-button {
+  background-color: #0095f6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  align-self: flex-end; /* Aligns button to the right */
+}
+
+.home-button:hover {
+  background-color: #007bb5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 10px;
+  }
+
+  .profile-photo-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .profile-photo {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .profile-info h1 {
+    font-size: 1.6rem;
+  }
+
+  .profile-info p {
+    font-size: 0.9rem;
+  }
+
+  .showfollowers-button,
+  .home-button {
+    padding: 8px 15px;
+  }
+
+  .profile-content {
+    padding: 15px;
+  }
+}

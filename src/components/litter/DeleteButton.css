@@ -1,0 +1,21 @@
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px; /* Justera storlek på ikonen */
+    color: #dc3545; /* Röd färg för delete */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.delete-button:hover {
+    color: #d6d6d6; /* Mörkare röd vid hover */
+}
+
+.delete-button:disabled {
+    color: #888; /* Grå för disabled state */
+    cursor: not-allowed; /* Visa att knappen är inaktiv */
+}
